@@ -1,49 +1,64 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <title>Startseite - Podcatcher</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <header>
-      <h1>Podcatcher</h1>
-    </header>
+    <head>
+        <title>Pott Cathcer</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <header>
+            <img src="assets/site-logo.jpeg" width="500" height="300" alt="Das Logo der Website. Ein Mikrofon umrundet von einem Kopfhörer">
+            <h1>Pott Catcher</h1>
+        </header>
 
-    <nav>
-        <p>
-          <a href="index.html">Abonnierte Podcasts</a> |
-          <a href="podcast.html">Details zum Podcast</a> | <a href="episode.html">Details zur Episode</a>
-        </p>
-      </nav>
+        <nav>
+            <a href="index.html">Menü</a>       |
+            <a href="podcast.html">Podcast</a>  |
+            <a href="episode.html">Episode</a>
+        </nav>
 
-    <main>
-      <h2>Abonnierte Podcasts</h2>
-      <ul>
-        <li>
-          <a href="podcast.html">Podcast 1</a>
-          <p>Anzahl der Episoden: 1</p>
-        </li>
-        <li>
-          <a href="podcast.html">Podcast 2</a>
-          <p>Anzahl der Episoden: 2</p>
-        </li>
-        <li>
-          <a href="podcast.html">Podcast 3</a>
-          <p>Anzahl der Episoden: 3</p>
-        </li>
-      </ul>
-    </main>
+        <main>
+            <section title="Liste abbonierter Podcasts">
+                <h2>Abbonierte Podcast</h2>
+                <ul>
+                    <li>
+                        <a href="podcast.html">Lage der Nation</a>
+                        <p>Akutelle Episode: 308</p>
+                    </li>
+                    <li>
+                        <a href="https://logbuch-netzpolitik.de/">Logbuch_Netzpolitk</a>
+                        <p>Akutelle Episode: 444</p>
+                    </li>
+                    <li>
+                        <a href="https://chaosradio.de/">Chaosradio</a>
+                        <p>Akutelle Episode: cr277</p>
+                    </li>
+                </ul>
+            </section>
 
-    <aside>
-        <h3>Neueste Episoden</h3>
-        <ul>
-            <li>10.10.2022: Podcast 1 - Folge 02: Technokram</li>
-            <li>03.10.2022: Podcast 1 - Folge 01: Ist das noch Punkrock?</li>
-        </ul>
-    </aside>
+            <section title="Podcast Suche">
+                <h2>Podcast finden</h2>
+                <form action="https://labs.inf.fh-dortmund.de/podcastService/testPodcastSearch.php" method="get">
+                    <label>
+                        Titel:
+                        <input name="pctitle" type="text" maxlength="100" pattern="[A-Z].*" required>
+                    </label>
+                    <input name="find" type="submit" value="Finden">
+                </form>
+            </section>
+        </main>
 
-    <footer>
-      <small>&copy; by Marco 2022</small>
-    </footer>
-  </body>
+        <aside>
+            <h5>Neueste Episoden</h5>
+            <ul>
+                <li>2022-10-19: Lage der Nation - 307:  49-Euro-Ticket, AKW-Streit, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes399</li>
+                <li>2022-10-15: LNP - 443:  Auf YOLO konfigurieren – LNP Spezial zum 400.000.000€-Hack</li>
+                <li>2022-06-26: Chaosradio - 277: Gesundheits-Apps</li>
+            </ul>
+        </aside>
+
+        <footer>
+            <small>&copy; by Lars 2022</small>
+        </footer>
+        
+    </body>
 </html>

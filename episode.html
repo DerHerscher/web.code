@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <title>Episoden - Podcatcher</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <header>
-      <h1>Podcatcher</h1>
-    </header>
+    <head>
+        <title> Podcast Info</title>
+        <meta charset="utf-8">
+    </head>
 
-    <nav>
-      <p>
-        <a href="index.html">Abonnierte Podcasts</a> |
-        <a href="podcast.html">Details zum Podcast</a> | <a href="episode.html">Details zur Episode</a>
-      </p>
-    </nav>
+    <body>
+        <header>
+            <img src="assets/site-logo.jpeg" width="500" height="300" alt="Das Logo der Website. Ein Mikrofon umrundet von einem Kopfhörer">
+            <h1>Pott Catcher</h1>
+        </header>
 
-    <main>
-      <section title="Infos zur Episode">
-        <h2>Infos zur Episode</h2>
-        <h4>Titel</h4>
-        <p>Folge 01: Ist das noch Punkrock</p>
-        <h4>Beschreibung</h4>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          alias possimus dolores. Mollitia eum nulla rem id! Tempora quaerat
-          officia tempore vitae enim itaque in? Asperiores suscipit recusandae
-          odio animi?
-        </p>
-        <h4>Veröffentlichungsdatum</h4>
-        <p><time datetime="2022-10-10">10.10.2022</time></p>
-      </section>
-    </main>
+        <nav>
+            <a href="index.html">Menü</a>       |
+            <a href="podcast.html">Podcast</a>  |
+            <a href="episode.html">Episode</a>
+        </nav>
 
-    <aside>
-        <h3>Neueste Episoden</h3>
-        <ul>
-            <li>10.10.2022: Podcast 1 - Folge 02: Technokram</li>
-            <li>03.10.2022: Podcast 1 - Folge 01: Ist das noch Punkrock?</li>
-        </ul>
-    </aside>
+        <main>
+            <section title="Informationen zur Episode">
+                <h2>Informationenzur Episode</h2>
+                    <h4>Titel</h4>
+                    <p> 49-Euro-Ticket, AKW-Streit, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes</p>
 
-    <footer>
-      <small>&copy; by Marco 2022</small>
-    </footer>
-  </body>
+                    <h4>Beschreibung</h4>
+                    <p>In der „Lage der Nation“ kehren der Journalist Philip Banse und der Jurist Ulf Buermeyer einmal in der Woche die politischen Ereignisse hierzulande und in der Welt zusammen, so diese sie interessieren und sie sie für relevant halten.</p>
+                    <time datetime="2022-10-19">Datum: 2022-10-19</time>
+            </section>
+
+            <section title="Audio Player zum abspielen der Episode">
+                <h2>Audio Player</h2>
+                <audio controls>
+                    <source src="placeholder.mp3" type="audio/mp3">
+                    <source src="placeholder.mp3" type="audio/mpeg">
+                    Ihr Browser untersützt die Anwendung nicht
+                </audio>
+            </section>
+            
+        </main>
+
+        <aside>
+            <h5>Neueste Episoden</h5>
+            <ul>
+                <li>2022-10-19: Lage der Nation - 307:  49-Euro-Ticket, AKW-Streit, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes399</li>
+                <li>2022-10-15: LNP - 443:  Auf YOLO konfigurieren – LNP Spezial zum 400.000.000€-Hack</li>
+                <li>2022-06-26: Chaosradio - 277: Gesundheits-Apps</li>
+            </ul>
+        </aside>
+
+        <footer>
+            <small>&copy; by Lars 2022</small>
+        </footer>
+
+    </body>
 </html>
