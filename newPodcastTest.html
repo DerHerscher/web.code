@@ -23,17 +23,17 @@
                 <form action="https://labs.inf.fh-dortmund.de/podcastService/testCreatePodcast.php" method="post">
                     <fieldset>
                         <legend>Der Podcast</legend>
-                        <label>Titel<input name="pctitle" type="text" placeholder="Titel des Podcasts (max. 100 Zeichen)" maxlength="100" pattern="[A-Z].*" autofocus required></label><br>
+                        <label>Titel<input name="pctitle" type="text" value="Lage der Nation" maxlength="100" pattern="[A-Z].*" autofocus required></label><br>
                         <label>Beschreibung
-                            <textarea name="pcdescription" placeholder="Eine kurze Beschreibung des Podcasts (max. 500 zeichen)" maxlength="500" cols="60" rows="5" required></textarea>
+                            <textarea name="pcdescription" placeholder="Bitte geben Sie eine Beschreibung an" maxlength="500" cols="60" rows="5" required>Politik-Podcast</textarea>
                         </label>
                     </fieldset>
 
                     <fieldset>
                         <legend>Persönliche Angaben</legend>
-                        <label>Autor(en)<input name="pcauthors" type="text" placeholder="Moderatoren des Podcasts" pattern=".*[^,]" required></label><br>
-                        <label>Name des Besitzers<input name="pcownername" type="text" placeholder="Besitzer (z.B. ein Auftraggeber)" required></label><br>
-                        <label>E-Mail des Besitzers<input name="pcowneremail" type="email" placeholder="valide Emailadresse" required></label><br>
+                        <label>Autor(en)<input name="pcauthors" type="text" value="Phillip Banse, Ulf Buermeyer" pattern=".*[^,]" required></label><br>
+                        <label>Name des Besitzers<input name="pcownername" type="text" value="Lage der Nation Media GmbH & Co. KG" required></label><br>
+                        <label>E-Mail des Besitzers<input name="pcowneremail" type="email" value="support@lagedernation.org" required></label><br>
                     </fieldset>
 
                     <fieldset>
@@ -45,8 +45,8 @@
                                 <option value="science">Wissenschaft</option>
                             </select>
                         </label><br>
-                        <label>Letztes Update (Datum)<input name="pclastupdatedate" type="date" min="2000-01-01" required></label><br>
-                        <label>Letztes Update (Uhrzeit)<input name="pclastupdatetime" type="time"  required></label><br>
+                        <label>Letztes Update (Datum)<input name="pclastupdatedate" type="date" value="2020-01-01" min="2000-01-01" required></label><br>
+                        <label>Letztes Update (Uhrzeit)<input name="pclastupdatetime" type="time" value="12:00" required></label><br>
                     </fieldset>
 
                     <fieldset>
