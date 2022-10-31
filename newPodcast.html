@@ -3,10 +3,11 @@
     <head>
         <title>Neuer Podcast</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     </head>
     <body>
         <header>
-            <img src="assets/site-logo.jpeg" width="500" height="300" alt="Das Logo der Website. Ein Mikrofon umrundet von einem Kopfhörer">
+            <img src="assets/img/site-logo.jpeg" width="500" height="300" alt="Das Logo der Website. Ein Mikrofon umrundet von einem Kopfhörer">
             <h1>Pott Catcher</h1>
         </header>
 
@@ -23,9 +24,9 @@
                 <form action="https://labs.inf.fh-dortmund.de/podcastService/testCreatePodcast.php" method="post">
                     <fieldset>
                         <legend>Der Podcast</legend>
-                        <label>Titel<input name="pctitle" type="text" placeholder="Titel des Podcasts (max. 100 Zeichen)" maxlength="100" pattern="[A-Z].*" autofocus required></label><br>
-                        <label>Beschreibung
-                            <textarea name="pcdescription" placeholder="Eine kurze Beschreibung des Podcasts (max. 500 zeichen)" maxlength="500" cols="60" rows="5" required></textarea>
+                        <label>Titel
+                            <input name="pctitle" type="text" placeholder="Titel des Podcasts (max. 100 Zeichen)" maxlength="100" pattern="[A-Z].*" autofocus required></label><br>
+                        <label>Beschreibung <br><textarea name="pcdescription" placeholder="Eine kurze Beschreibung des Podcasts (max. 500 zeichen)" maxlength="500" cols="60" rows="5" required></textarea>
                         </label>
                     </fieldset>
 
@@ -38,7 +39,7 @@
 
                     <fieldset>
                         <legend>Technisches</legend>
-                        <label>Kategorien
+                        <label>Kategorien<br>
                             <select name="pccategories" multiple>
                                 <option value="politics" selected>Politik</option>
                                 <option value="tech">Technik</option>
@@ -69,7 +70,7 @@
         </aside>
 
         <footer>
-            <small>&copy; by Lars 2022</small>
+            <small>&copy; by Lars & Marco 2022</small>
         </footer>
     </body>
 </html>
