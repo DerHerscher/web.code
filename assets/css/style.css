@@ -1,13 +1,13 @@
 h1 {
     color: rgb(52, 20, 233);
     text-transform: uppercase;
-    font-family: fantasy;
+    font-family: 'Lucida Sans';
 }
 
 h2 {
     color:darkslategrey;
     text-transform: uppercase;
-    font-family: fantasy;
+    font-family: 'Lucida Sans';
 }
 
 h5 {
@@ -28,6 +28,9 @@ nav a {
 }
 
 legend {
+    text-decoration: underline;
+    text-decoration-color: aquamarine;
+    font-size: larger;
     font-weight: bold;
 }
 
