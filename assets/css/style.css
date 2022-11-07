@@ -1,28 +1,56 @@
 h1 {
     color: rgb(52, 20, 233);
     text-transform: uppercase;
-    font-family: 'Lucida Sans';
 }
 
 h2 {
     color:darkslategrey;
     text-transform: uppercase;
-    font-family: 'Lucida Sans';
 }
 
 h5 {
     font-style: oblique;
 }
 
-nav {
-    background-color:aquamarine;
-}
-
 aside {
     background-color: coral;
+    border-radius: 4px;
+    padding:10px;
+    border: 2px solid black;
 }
 
 nav a {
     text-decoration: none;
-    color:black;
+    background-color: rgb(52, 20, 233);
+    color: white;
+    border-radius: 2px;
+    padding: 5px;
+    border-style: hidden;
+   
 }
+
+nav a:hover {
+    background-color: aquamarine;
+    color: darkslategrey;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+td {
+    padding: 7px;  
+}
+
+#podcastTable thead {
+    background-color: lightskyblue;
+}
+
+#podcastTable tbody tr:nth-child(odd) {
+    background-color: lightgray;
+}
+
+a[href^="mailto"]::before {
+    content: "✉";
+
+} 
