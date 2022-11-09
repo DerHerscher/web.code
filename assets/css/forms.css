@@ -53,7 +53,7 @@ form input:hover{
     background-color: blanchedalmond;
 }
 
-form label::after {
+form label:has(input[required])::after{
     content: "*";
     color: red;
 }
