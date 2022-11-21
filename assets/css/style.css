@@ -1,16 +1,38 @@
+/* Header Styles */
+
 h1 {
     color: rgb(52, 20, 233);
     text-transform: uppercase;
+    float: left;
 }
 
-h2 {
-    color:darkslategrey;
-    text-transform: uppercase;
+/* Navbar Styles */
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
 
-h5 {
-    font-style: oblique;
+nav a {
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(52, 20, 233);
+    color: white;
+
+    margin: 10px;
+    border-radius: 2px;
+    border-style: hidden;
+    padding: 5px;
+    
+    flex-grow: 1;
 }
+
+nav a:hover {
+    background-color: aquamarine;
+    color: darkslategrey;
+}
+
+/* Aside Styles */
 
 aside {
     background-color: coral;
@@ -19,24 +41,15 @@ aside {
     border: 2px solid black;
 }
 
-nav a {
-    text-decoration: none;
-    background-color: rgb(52, 20, 233);
-    color: white;
-    border-radius: 2px;
-    padding: 5px;
-    border-style: hidden;
-   
+/* Footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
 
-nav a:hover {
-    background-color: aquamarine;
-    color: darkslategrey;
-}
-
-body {
-    font-family: Helvetica, sans-serif;
-}
+/* Table Styles */
 
 td {
     padding: 7px;  
@@ -48,6 +61,20 @@ td {
 
 #podcastTable tbody tr:nth-child(odd) {
     background-color: lightgray;
+}
+
+/* Sonstiges */
+h2 {
+    color:darkslategrey;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-style: oblique;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
 }
 
 a[href^="mailto"]::before {
