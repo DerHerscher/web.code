@@ -1,77 +1,142 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>Neuer Podcast</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/forms.css">
-    </head>
-    <body>
-        <header>
-            <img src="assets/img/site-logo.jpeg" width="500" height="300" alt="Das Logo der Website. Ein Mikrofon umrundet von einem Kopfhörer">
-            <h1>Pott Catcher</h1>
-        </header>
+  <head>
+    <title>Neuer Podcast</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/forms.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/grid.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="assets/img/site-logo.jpeg"
+        width="500"
+        height="300"
+        alt="Das Logo der Website. Ein Mikrofon umrundet von einem Kopfhörer"
+      />
+      <h1>Pott Catcher</h1>
+    </header>
 
-        <nav>
-            <a href="index.html">Startseite</a>       
-            <a href="podcast.html">Podcast</a>  
-            <a href="episode.html">Episode</a>  
-            <a href="newPodcast.html">New Podcast</a>
-        </nav>
+    <nav>
+      <a href="index.html">Startseite</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="episode.html">Episode</a>
+      <a href="newPodcast.html">New Podcast</a>
+    </nav>
 
-        <main>
-            <section>
-                <h2>Neuen Podcast hinzufügen</h2>
-                <form action="https://labs.inf.fh-dortmund.de/podcastService/testCreatePodcast.php" method="post">
-                    <fieldset>
-                        <legend>Der Podcast</legend>
-                        <label>Titel
-                            <input name="pctitle" type="text" placeholder="Titel des Podcasts (max. 100 Zeichen)" maxlength="100" pattern="[A-Z].*" autofocus required></label><br>
-                        <label>Beschreibung <br><textarea name="pcdescription" placeholder="Eine kurze Beschreibung des Podcasts (max. 500 zeichen)" maxlength="500" cols="60" rows="5" required></textarea>
-                        </label>
-                    </fieldset>
+    <div id="grid_main_aside">
+      <main>
+        <section>
+          <h2>Neuen Podcast hinzufügen</h2>
+          <form
+            action="https://labs.inf.fh-dortmund.de/podcastService/testCreatePodcast.php"
+            method="post"
+          >
+            <fieldset>
+              <legend>Der Podcast</legend>
+              <label
+                >Titel
+                <input
+                  name="pctitle"
+                  type="text"
+                  placeholder="Titel des Podcasts (max. 100 Zeichen)"
+                  maxlength="100"
+                  pattern="[A-Z].*"
+                  autofocus
+                  required /></label
+              ><br />
+              <label
+                >Beschreibung <br /><textarea
+                  name="pcdescription"
+                  placeholder="Eine kurze Beschreibung des Podcasts (max. 500 zeichen)"
+                  maxlength="500"
+                  cols="60"
+                  rows="5"
+                  required
+                ></textarea>
+              </label>
+            </fieldset>
 
-                    <fieldset>
-                        <legend>Persönliche Angaben</legend>
-                        <label>Autor(en)<input name="pcauthors" type="text" placeholder="Moderatoren des Podcasts" pattern=".*[^,]" required></label><br>
-                        <label>Name des Besitzers<input name="pcownername" type="text" placeholder="Besitzer (z.B. ein Auftraggeber)" required></label><br>
-                        <label>E-Mail des Besitzers<input name="pcowneremail" type="email" placeholder="valide Emailadresse" required></label><br>
-                    </fieldset>
+            <fieldset>
+              <legend>Persönliche Angaben</legend>
+              <label
+                >Autor(en)<input
+                  name="pcauthors"
+                  type="text"
+                  placeholder="Moderatoren des Podcasts"
+                  pattern=".*[^,]"
+                  required /></label
+              ><br />
+              <label
+                >Name des Besitzers<input
+                  name="pcownername"
+                  type="text"
+                  placeholder="Besitzer (z.B. ein Auftraggeber)"
+                  required /></label
+              ><br />
+              <label
+                >E-Mail des Besitzers<input
+                  name="pcowneremail"
+                  type="email"
+                  placeholder="valide Emailadresse"
+                  required /></label
+              ><br />
+            </fieldset>
 
-                    <fieldset>
-                        <legend>Technisches</legend>
-                        <label>Kategorien<br>
-                            <select name="pccategories" multiple>
-                                <option value="politics" selected>Politik</option>
-                                <option value="tech">Technik</option>
-                                <option value="science">Wissenschaft</option>
-                            </select>
-                        </label><br>
-                        <label>Letztes Update (Datum)<input name="pclastupdatedate" type="date" min="2000-01-01" required></label><br>
-                        <label>Letztes Update (Uhrzeit)<input name="pclastupdatetime" type="time"  required></label><br>
-                    </fieldset>
+            <fieldset>
+              <legend>Technisches</legend>
+              <label
+                >Kategorien<br />
+                <select name="pccategories" multiple>
+                  <option value="politics" selected>Politik</option>
+                  <option value="tech">Technik</option>
+                  <option value="science">Wissenschaft</option>
+                </select> </label
+              ><br />
+              <label
+                >Letztes Update (Datum)<input
+                  name="pclastupdatedate"
+                  type="date"
+                  min="2000-01-01"
+                  required /></label
+              ><br />
+              <label
+                >Letztes Update (Uhrzeit)<input
+                  name="pclastupdatetime"
+                  type="time"
+                  required /></label
+              ><br />
+            </fieldset>
 
-                    <fieldset>
-                        <legend>Abgabe</legend>
-                        <input name="submit" type="submit" value="Podcast Hinzufügen">
-                        <input name="reset" type="reset" value="Formular Zurücksetzten">
-                    </fieldset>
-                </form>
-            </section>
+            <fieldset>
+              <legend>Abgabe</legend>
+              <input name="submit" type="submit" value="Podcast Hinzufügen" />
+              <input name="reset" type="reset" value="Formular Zurücksetzten" />
+            </fieldset>
+          </form>
+        </section>
+      </main>
 
-        </main>
+      <aside>
+        <h5>Neueste Episoden</h5>
+        <ul>
+          <li>
+            2022-10-19: Lage der Nation - 307: 49-Euro-Ticket, AKW-Streit,
+            Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror,
+            Risiko eines Atomwaffeneinsatzes399
+          </li>
+          <li>
+            2022-10-15: LNP - 443: Auf YOLO konfigurieren – LNP Spezial zum
+            400.000.000€-Hack
+          </li>
+          <li>2022-06-26: Chaosradio - 277: Gesundheits-Apps</li>
+        </ul>
+      </aside>
+    </div>
 
-        <aside>
-            <h5>Neueste Episoden</h5>
-            <ul>
-                <li>2022-10-19: Lage der Nation - 307:  49-Euro-Ticket, AKW-Streit, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes399</li>
-                <li>2022-10-15: LNP - 443:  Auf YOLO konfigurieren – LNP Spezial zum 400.000.000€-Hack</li>
-                <li>2022-06-26: Chaosradio - 277: Gesundheits-Apps</li>
-            </ul>
-        </aside>
-
-        <footer>
-            <small>&copy; by Lars & Marco 2022</small>
-        </footer>
-    </body>
+    <footer>
+      <small>&copy; by Lars & Marco 2022</small>
+    </footer>
+  </body>
 </html>
