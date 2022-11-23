@@ -10,6 +10,7 @@ main {
 
 aside {
     grid-area: seite;
+    align-self: center;
 }
 
 main.podcast {

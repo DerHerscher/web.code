@@ -6,6 +6,10 @@ h1 {
     float: left;
 }
 
+header {
+    clear: left
+}
+
 /* Navbar Styles */
 nav {
     display: flex;

@@ -5,6 +5,7 @@
 
 aside { 
     flex: 1 0 30%;
+    align-self: center;
 }
 
 main {
