@@ -1,58 +1,79 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title> Episoden Info</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    </head>
+  <head>
+    <title>Episoden Info</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flex.css" />
+  </head>
 
-    <body>
-        <header>
-            <img src="assets/img/site-logo.jpeg" width="500" height="300" alt="Das Logo der Website. Ein Mikrofon umrundet von einem Kopfhörer">
-            <h1>Pott Catcher</h1>
-        </header>
+  <body>
+    <header>
+      <img
+        src="assets/img/site-logo.jpeg"
+        width="500"
+        height="300"
+        alt="Das Logo der Website. Ein Mikrofon umrundet von einem Kopfhörer"
+      />
+      <h1>Pott Catcher</h1>
+    </header>
 
-        <nav>
-            <a href="index.html">Startseite</a>       
-            <a href="podcast.html">Podcast</a>  
-            <a href="episode.html">Episode</a>  
-            <a href="newPodcast.html">New Podcast</a>
-        </nav>
+    <nav>
+      <a href="index.html">Startseite</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="episode.html">Episode</a>
+      <a href="newPodcast.html">New Podcast</a>
+    </nav>
 
-        <main>
-            <section title="Informationen zur Episode">
-                <h2>Informationenzur Episode</h2>
-                    <h4>Titel</h4>
-                    <p> 49-Euro-Ticket, AKW-Streit,TEST, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes</p>
+    <div id="box_main_aside">
+      <main class="episode">
+        <section title="Informationen zur Episode">
+          <h2>Informationenzur Episode</h2>
+          <h4>Titel</h4>
+          <p>
+            49-Euro-Ticket, AKW-Streit,TEST, Niedersachsen-Wahl, Strategie für
+            die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes
+          </p>
 
-                    <h4>Beschreibung</h4>
-                    <p>In der „Lage der Nation“ kehren der Journalist Philip Banse und der Jurist Ulf Buermeyer einmal in der Woche die politischen Ereignisse hierzulande und in der Welt zusammen, so diese sie interessieren und sie sie für relevant halten.</p>
-                    <time datetime="2022-10-19">Datum: 2022-10-19</time>
-            </section>
+          <h4>Beschreibung</h4>
+          <p>
+            In der „Lage der Nation“ kehren der Journalist Philip Banse und der
+            Jurist Ulf Buermeyer einmal in der Woche die politischen Ereignisse
+            hierzulande und in der Welt zusammen, so diese sie interessieren und
+            sie sie für relevant halten.
+          </p>
+          <time datetime="2022-10-19">Datum: 2022-10-19</time>
+        </section>
 
-            <section title="Audio Player zum abspielen der Episode">
-                <h2>Audio Player</h2>
-                <audio controls>
-                    <source src="assets/audio/audio.mp3" type="audio/mp3">
-                    <source src="assets/audio/audio.mp3" type="audio/mpeg">
-                    Ihr Browser untersützt die Anwendung nicht
-                </audio>
-            </section>
-            
-        </main>
+        <section title="Audio Player zum abspielen der Episode">
+          <h2>Audio Player</h2>
+          <audio controls>
+            <source src="assets/audio/audio.mp3" type="audio/mp3" />
+            <source src="assets/audio/audio.mp3" type="audio/mpeg" />
+            Ihr Browser untersützt die Anwendung nicht
+          </audio>
+        </section>
+      </main>
 
-        <aside>
-            <h5>Neueste Episoden</h5>
-            <ul>
-                <li>2022-10-19: Lage der Nation - 307:  49-Euro-Ticket, AKW-Streit, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes399</li>
-                <li>2022-10-15: LNP - 443:  Auf YOLO konfigurieren – LNP Spezial zum 400.000.000€-Hack</li>
-                <li>2022-06-26: Chaosradio - 277: Gesundheits-Apps</li>
-            </ul>
-        </aside>
+      <aside>
+        <h5>Neueste Episoden</h5>
+        <ul>
+          <li>
+            2022-10-19: Lage der Nation - 307: 49-Euro-Ticket, AKW-Streit,
+            Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror,
+            Risiko eines Atomwaffeneinsatzes399
+          </li>
+          <li>
+            2022-10-15: LNP - 443: Auf YOLO konfigurieren – LNP Spezial zum
+            400.000.000€-Hack
+          </li>
+          <li>2022-06-26: Chaosradio - 277: Gesundheits-Apps</li>
+        </ul>
+      </aside>
+    </div>
 
-        <footer>
-            <small>&copy; by Lars & Marco 2022</small>
-        </footer>
-
-    </body>
+    <footer>
+      <small>&copy; by Lars & Marco 2022</small>
+    </footer>
+  </body>
 </html>

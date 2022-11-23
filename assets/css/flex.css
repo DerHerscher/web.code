@@ -1,0 +1,23 @@
+#box_main_aside {
+    display: flex;
+    flex-flow: row ;
+}
+
+aside { 
+    flex: 1 0 30%;
+}
+
+main {
+    flex: 2 0 70%;
+}
+
+main.index {
+    display: flex;
+    flex-direction: column-reverse;
+    flex: 2 0 70%;
+}
+
+main.episode {
+    display: flex;
+    flex-direction: column;
+}
