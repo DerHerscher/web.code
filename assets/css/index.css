@@ -1,0 +1,21 @@
+
+#listepodcast {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#listepodcast div {
+    margin: 15px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 5px;
+
+}
+
+#listepodcast div a {
+    display: block;
+    text-decoration: none;
+}
+

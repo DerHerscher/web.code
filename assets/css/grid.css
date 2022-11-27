@@ -7,10 +7,8 @@
 main { 
     grid-area: haupt;
 }
-
 aside {
     grid-area: seite;
-    align-self: center;
 }
 
 main.podcast {
@@ -23,3 +21,26 @@ main.podcast {
 #info { grid-area: infos; }
 #logo  {grid-area: logo; }
 #liste { grid-area: liste; }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    #grid_main_aside {
+        grid-template-areas:    "haupt"
+                                "seite";
+        grid-template-columns: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    main.podcast {
+        grid-template-columns: 1;
+        grid-template-areas: "infos"
+                            "liste"
+                            "logo";
+    }
+}
