@@ -4,21 +4,26 @@
 }
 
 aside { 
-    flex: 1 0 30%;
-    align-self: center;
+    flex: 2 1 40%;
 }
 
 main {
-    flex: 2 0 70%;
+    flex: 2 1 70%;
 }
 
 main.index {
     display: flex;
     flex-direction: column-reverse;
-    flex: 2 0 70%;
+    flex: 2 1 70%;
 }
 
 main.episode {
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    #box_main_aside {
+        flex-flow: column;
+    }
 }
