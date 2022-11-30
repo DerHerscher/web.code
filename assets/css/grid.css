@@ -9,6 +9,7 @@ main {
 }
 aside {
     grid-area: seite;
+    align-self: baseline;
 }
 
 main.podcast {
@@ -23,7 +24,7 @@ main.podcast {
 #liste { grid-area: liste; }
 
 img {
-    max-width: 100%;
+    width: 50%;
     height: auto;
 }
 

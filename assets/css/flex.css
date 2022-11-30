@@ -5,6 +5,7 @@
 
 aside { 
     flex: 2 1 40%;
+    align-self: baseline;
 }
 
 main {

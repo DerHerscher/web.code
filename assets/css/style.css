@@ -1,12 +1,18 @@
 /* Header Styles */
 
-h1 {
+header {
+    display: flex;
+    align-items: center;
+}
+
+h1 { /*Float ist weg, das Bild muss Floaten?*/
     color: rgb(52, 20, 233);
     text-transform: uppercase;
 }
 
-header {
-    clear: left
+header > img {
+    width: 30%;
+    height: auto;
 }
 
 /* Navbar Styles */

@@ -1,10 +1,11 @@
 
-#listepodcast {
+#podcastboxen {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 
-#listepodcast div {
+#podcastboxen figure {
     margin: 15px;
     border-style: solid;
     border-color: black;
@@ -14,7 +15,7 @@
 
 }
 
-#listepodcast div a {
+#podcastboxen figure a {
     display: block;
     text-decoration: none;
 }
