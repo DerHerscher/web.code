@@ -15,11 +15,16 @@ function Podcast( titel, beschreibung, autor, besitzerName, besitzerEmail, bildU
     this.bildUrl = bildUrl,
     this.feedUrl = feedUrl,
     this. kategorien = kategorien,
-    this.letztesUpdate = new Date();    //Fragen ob Date Objekt oder Zeit und Datum als String gespeichert werden soll?
+    this.letztesUpdate = new Date(),    //Fragen ob Date Objekt oder Zeit und Datum als String gespeichert werden soll?
+    this.episoden = [];
 }
 
-let lnp = new Podcast("LNP", "Voll toller Podcast", "Tim", "Tim Pritlove", "pritlove@lnp.de", "www.help.com", "feedme.de", ["Politk", "Netgedöns"]);
-console.log(lnp);
+//Add Funktion für Episoden
+Podcast.prototype.addEpisode = function(episode) {
+    this.episoden.push(episode);
+    this.episoden.sort( (a, b) => a.datum - b.datum );
+}
+
 
 function Episode(titel, beschreibung, dauer){
     this.titel = titel,
@@ -43,8 +48,15 @@ function EpisodeAudio(url, groesse, typ, episode){
     this.episode = episode;
 }
 
+//Beispiel Objekte und Ausgaben
+let lnp = new Podcast("LNP", "Voll toller Podcast", "Tim", "Tim Pritlove", "pritlove@lnp.de", "www.help.com", "feedme.de", ["Politk", "Netgedöns"]);
+console.log(lnp);
+let folge101 = new Episode("Dönerstag wieder am Donnerstag", "Blah", 20,)
 let folge100 = new Episode("Dönnerstag am Mittwoch", "Achtung der Dönerstag wurde verlegt", 5880000 );
 let folge100Datei = new EpisodeAudio("www.audio.datei/daei", 48987, "mp3", folge100);
 console.log(folge100);
 console.log(folge100.getDauerInStundenUndMinuten());
 console.log(folge100Datei);
+lnp.addEpisode(folge100);
+lnp.addEpisode(folge101);
+console.log(lnp.episoden);
