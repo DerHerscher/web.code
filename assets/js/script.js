@@ -19,10 +19,10 @@ function Podcast( titel, beschreibung, autor, besitzerName, besitzerEmail, bildU
     this.episoden = [];
 }
 
-//Add Funktion für Episoden
+//Add Funktion für Podcast
 Podcast.prototype.addEpisode = function(episode) {
     this.episoden.push(episode);
-    this.episoden.sort( (a, b) => a.datum - b.datum );
+    this.episoden.sort( (a, b) => b.datum - a.datum );  //Sortieren hat keine Auswirkung, weil Objekte immer zur gleichen Zeit erstellt werden. Bei der Berechnung werden keine ms mit einbezogen nur ms.
 }
 
 
@@ -49,14 +49,32 @@ function EpisodeAudio(url, groesse, typ, episode){
 }
 
 //Beispiel Objekte und Ausgaben
+let lage = new Podcast("Lage der Nation", "Ein Politik Podcast", "Ulf Burmeyer", "Phillip Banse","support@lagedernation.org","assets/img/2560px-Lage_der_Nation_Logo.svg","feed.com",["Politk","news"]);
 let lnp = new Podcast("LNP", "Voll toller Podcast", "Tim", "Tim Pritlove", "pritlove@lnp.de", "www.help.com", "feedme.de", ["Politk", "Netgedöns"]);
-console.log(lnp);
-let folge101 = new Episode("Dönerstag wieder am Donnerstag", "Blah", 20,)
-let folge100 = new Episode("Dönnerstag am Mittwoch", "Achtung der Dönerstag wurde verlegt", 5880000 );
-let folge100Datei = new EpisodeAudio("www.audio.datei/daei", 48987, "mp3", folge100);
-console.log(folge100);
-console.log(folge100.getDauerInStundenUndMinuten());
-console.log(folge100Datei);
-lnp.addEpisode(folge100);
+
+let folge306 = new Episode("Lage der Nation 306", "Putins Eskalation, Gas-Pipelines explodiert, Proteste im Iran (Interview Gilda Sahebi, taz), 200 Mrd. für Energiehilfen, Energiemarkt der Zukunft (Interview Lion Hirth, Hertie School), Umgang mit Bad News", 4980000);
+let folge307 = new Episode("Lage der Nation 307", "49-Euro-Ticket, AKW-Streit, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes399", 5880000);
+lage.addEpisode(folge306)
+lage.addEpisode(folge307);
+
+let folge100 = new Episode("Dönnerstag am Mittwoch", "Achtung der Dönerstag wurde verlegt", 14460000);
+let folge101 = new Episode("Dönerstag wieder am Donnerstag", "Blah", 5880000)
 lnp.addEpisode(folge101);
-console.log(lnp.episoden);
+lnp.addEpisode(folge100);
+
+let podcastArray = [lage, lnp];
+
+podcastArray.forEach( pod => {
+    console.log(`${pod.titel}:`);
+    pod.episoden.forEach( epi => {
+        console.log(`\t ${epi.titel}: (${epi.getDauerInStundenUndMinuten()})`);
+    });
+});
+
+
+// console.log(lnp);
+// let folge100Datei = new EpisodeAudio("www.audio.datei/daei", 48987, "mp3", folge100);
+// console.log(folge100);
+// console.log(folge100.getDauerInStundenUndMinuten());
+// console.log(folge100Datei);
+// console.log(lnp.episoden);
