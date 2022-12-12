@@ -6,7 +6,7 @@ if( getViewportWidth() < screen.width*0.3) {
     alert("Achtung Achtung Sie verlassen den gesicherten Bereich");
 }
 
-function Podcast( titel, beschreibung, autor, besitzerName, besitzerEmail, bildUrl, feedUrl, kategorien ){
+function Podcast( titel, beschreibung, autor, besitzerName, besitzerEmail, bildUrl, feedUrl, kategorien, datum ){
     this.titel = titel,
     this.beschreibung = beschreibung,
     this.autor = autor,
@@ -14,8 +14,8 @@ function Podcast( titel, beschreibung, autor, besitzerName, besitzerEmail, bildU
     this.besitzerEmail = besitzerEmail,
     this.bildUrl = bildUrl,
     this.feedUrl = feedUrl,
-    this. kategorien = kategorien,
-    this.letztesUpdate = new Date(),    //Fragen ob Date Objekt oder Zeit und Datum als String gespeichert werden soll?
+    this.kategorien = kategorien,       
+    this.letztesUpdate = datum,   //Fragen ob Date Objekt oder Zeit und Datum als String gespeichert werden soll?
     this.episoden = [];
 }
 
@@ -23,14 +23,15 @@ function Podcast( titel, beschreibung, autor, besitzerName, besitzerEmail, bildU
 Podcast.prototype.addEpisode = function(episode) {
     this.episoden.push(episode);
     this.episoden.sort( (a, b) => b.datum - a.datum );  //Sortieren hat keine Auswirkung, weil Objekte immer zur gleichen Zeit erstellt werden. Bei der Berechnung werden keine ms mit einbezogen nur ms.
-}
+    //Anmerkung von Marco: Die funktion funktioniert nur dann so, wenn auch ein Date objekt erstellt wird und nicht immer nur dieses zur aktuellen laufzeit erstellt wird. 
+}                                   
 
 
-function Episode(titel, beschreibung, dauer){
+function Episode(titel, beschreibung, dauer, datum){
     this.titel = titel,
     this.beschreibung = beschreibung,
     this.dauer = dauer,
-    this.datum = new Date();
+    this.datum = datum;
 }
 
 //Funktion für Objekt Episode
@@ -41,19 +42,21 @@ Episode.prototype.getDauerInStundenUndMinuten = function() {
     return `${h}h ${min}min`;
 }
 
-function EpisodeAudio(url, groesse, typ, episode){
+function EpisodeAudio(url, groesse, typ, episode){  //Vererbungsbeziehung nicht umgesetzt?
     this.url = url,
     this.groesse = groesse,
     this.typ = typ;
     this.episode = episode;
 }
 
-//Beispiel Objekte und Ausgaben
-let lage = new Podcast("Lage der Nation", "Ein Politik Podcast", "Ulf Burmeyer", "Phillip Banse","support@lagedernation.org","assets/img/2560px-Lage_der_Nation_Logo.svg","feed.com",["Politk","news"]);
-let lnp = new Podcast("LNP", "Voll toller Podcast", "Tim", "Tim Pritlove", "pritlove@lnp.de", "www.help.com", "feedme.de", ["Politk", "Netgedöns"]);
 
-let folge306 = new Episode("Lage der Nation 306", "Putins Eskalation, Gas-Pipelines explodiert, Proteste im Iran (Interview Gilda Sahebi, taz), 200 Mrd. für Energiehilfen, Energiemarkt der Zukunft (Interview Lion Hirth, Hertie School), Umgang mit Bad News", 4980000);
-let folge307 = new Episode("Lage der Nation 307", "49-Euro-Ticket, AKW-Streit, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes399", 5880000);
+//------------------------------------------------------------------------------------------------------------------------------------
+//Beispiel Objekte und Ausgaben
+let lage = new Podcast("Lage der Nation", "Ein Politik Podcast", "Ulf Burmeyer", "Phillip Banse","support@lagedernation.org","assets/img/2560px-Lage_der_Nation_Logo.svg","feed.com",["Politk","news"], new Date("1999-10-04T03:24:00"));
+let lnp = new Podcast("LNP", "Voll toller Podcast", "Tim", "Tim Pritlove", "pritlove@lnp.de", "www.help.com", "feedme.de", ["Politk", "Netgedöns"],new Date("1995-12-17T03:24:00"));
+
+let folge306 = new Episode("Lage der Nation 306", "Putins Eskalation, Gas-Pipelines explodiert, Proteste im Iran (Interview Gilda Sahebi, taz), 200 Mrd. für Energiehilfen, Energiemarkt der Zukunft (Interview Lion Hirth, Hertie School), Umgang mit Bad News", 4980000,new Date("2020-12-17T03:24:00"));
+let folge307 = new Episode("Lage der Nation 307", "49-Euro-Ticket, AKW-Streit, Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror, Risiko eines Atomwaffeneinsatzes399", 5880000,new Date("2022-02-01T03:24:00"));
 lage.addEpisode(folge306)
 lage.addEpisode(folge307);
 
@@ -65,7 +68,7 @@ lnp.addEpisode(folge100);
 let podcastArray = [lage, lnp];
 
 podcastArray.forEach( pod => {
-    console.log(`${pod.titel}:`);
+    console.log(`${pod.titel} (Letztes Update: ${pod.letztesUpdate}):`);
     pod.episoden.forEach( epi => {
         console.log(`\t ${epi.titel}: (${epi.getDauerInStundenUndMinuten()})`);
     });
