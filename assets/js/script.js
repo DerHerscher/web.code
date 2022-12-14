@@ -15,15 +15,14 @@ function Podcast( titel, beschreibung, autor, besitzerName, besitzerEmail, bildU
     this.bildUrl = bildUrl,
     this.feedUrl = feedUrl,
     this.kategorien = kategorien,       
-    this.letztesUpdate = datum,   //Fragen ob Date Objekt oder Zeit und Datum als String gespeichert werden soll?
+    this.letztesUpdate = datum,   //Datumsobjekt soll übergeben werden. Nicht zur Laufzeit erstellt.
     this.episoden = [];
 }
 
 //Add Funktion für Podcast
 Podcast.prototype.addEpisode = function(episode) {
     this.episoden.push(episode);
-    this.episoden.sort( (a, b) => b.datum - a.datum );  //Sortieren hat keine Auswirkung, weil Objekte immer zur gleichen Zeit erstellt werden. Bei der Berechnung werden keine ms mit einbezogen nur ms.
-    //Anmerkung von Marco: Die funktion funktioniert nur dann so, wenn auch ein Date objekt erstellt wird und nicht immer nur dieses zur aktuellen laufzeit erstellt wird. 
+    this.episoden.sort( (a, b) => b.datum - a.datum );
 }                                   
 
 
@@ -31,7 +30,8 @@ function Episode(titel, beschreibung, dauer, datum){
     this.titel = titel,
     this.beschreibung = beschreibung,
     this.dauer = dauer,
-    this.datum = datum;
+    this.datum = datum,
+    this.audioFile = this.audioFile; //Komposition zu EpisodeAudio
 }
 
 //Funktion für Objekt Episode
@@ -42,7 +42,7 @@ Episode.prototype.getDauerInStundenUndMinuten = function() {
     return `${h}h ${min}min`;
 }
 
-function EpisodeAudio(url, groesse, typ, episode){  //Vererbungsbeziehung nicht umgesetzt?
+function EpisodeAudio(url, groesse, typ, episode){
     this.url = url,
     this.groesse = groesse,
     this.typ = typ;
@@ -73,11 +73,3 @@ podcastArray.forEach( pod => {
         console.log(`\t ${epi.titel}: (${epi.getDauerInStundenUndMinuten()})`);
     });
 });
-
-
-// console.log(lnp);
-// let folge100Datei = new EpisodeAudio("www.audio.datei/daei", 48987, "mp3", folge100);
-// console.log(folge100);
-// console.log(folge100.getDauerInStundenUndMinuten());
-// console.log(folge100Datei);
-// console.log(lnp.episoden);
