@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/forms.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/flex.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
   </head>
   <body>
     <header>
@@ -24,28 +25,16 @@
       <a href="podcast.html">Podcast</a>
       <a href="episode.html">Episode</a>
       <a href="newPodcast.html">New Podcast</a>
-      <a href="index2.html">Startseite (2)</a>
     </nav>
 
     <div id="box_main_aside">
       <main class="index">
         <section id="listepodcast" title="Liste abbonierter Podcasts">
           <h2>Abbonierte Podcast</h2>
-          <ul>
-            <li>
-              <a href="podcast.html">Lage der Nation</a>
-              <p>Akutelle Episode: 308</p>
-            </li>
-            <li>
-              <a href="https://logbuch-netzpolitik.de/">Logbuch_Netzpolitk</a>
-              <p>Akutelle Episode: 444</p>
-            </li>
-            <li>
-              <a href="https://chaosradio.de/">Chaosradio</a>
-              <p>Akutelle Episode: cr277</p>
-            </li>
-          </ul>
-          <script src="assets/js/script.js"></script>
+          <input id="ansichtWechsel" name="ansicht" type="button" value="Listenansicht" />
+          <div id="podcastboxen">
+            <!-- Inhalt Dynamisch per JS -->
+          </div>
         </section>
 
         <section id="podcastsuche" title="Podcast Suche">
@@ -89,5 +78,7 @@
     <footer>
       <small>&copy; by Lars & Marco 2022</small>
     </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/index.js"></script>
   </body>
 </html>
