@@ -1,0 +1,25 @@
+{
+  "name": "pottcatcher",
+  "version": "1.0.0",
+  "description": "This is a podcast web app.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DerHerscher/webtech-code.git"
+  },
+  "author": "Lars Niodek, Marco Fischer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DerHerscher/webtech-code/issues"
+  },
+  "homepage": "https://github.com/DerHerscher/webtech-code#readme",
+  "dependencies": {
+    "podcast-feed-parser": "^1.0.4"
+  }
+}
