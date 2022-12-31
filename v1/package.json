@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/DerHerscher/webtech-code#readme",
   "dependencies": {
+    "nodemon": "^2.0.20",
     "podcast-feed-parser": "^1.0.4"
   }
 }

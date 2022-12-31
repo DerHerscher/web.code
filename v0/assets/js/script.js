@@ -26,12 +26,12 @@ Podcast.prototype.addEpisode = function(episode) {
 }                                   
 
 
-function Episode(titel, beschreibung, dauer, datum){
+function Episode(titel, beschreibung, dauer, datum, audioFile){
     this.titel = titel,
     this.beschreibung = beschreibung,
     this.dauer = dauer,
     this.datum = datum,
-    this.audioFile = this.audioFile; //Komposition zu EpisodeAudio
+    this.audioFile = audioFile; //Komposition zu EpisodeAudio
 }
 
 //Funktion für Objekt Episode
@@ -42,11 +42,10 @@ Episode.prototype.getDauerInStundenUndMinuten = function() {
     return `${h}h ${min}min`;
 }
 
-function EpisodeAudio(url, groesse, typ, episode){
+function EpisodeAudio(url, groesse, typ){
     this.url = url,
     this.groesse = groesse,
     this.typ = typ;
-    this.episode = episode;
 }
 
 
