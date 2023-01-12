@@ -1,0 +1,72 @@
+/* Fieldset and Legend Rules */
+
+form fieldset{
+    background-color: lightgrey;
+
+    border-bottom: 0px;
+    border-left:  0px;
+    border-right: 0px;
+    border-radius: 10px;
+    border-color: aquamarine;
+
+    margin: 20px;
+}
+
+form legend {
+    text-decoration: underline;
+    text-decoration-color: aquamarine;
+    font-size: larger;
+    font-weight: bold;
+
+    border-style: solid;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 7px;
+}
+
+/* Label and Input Rules */
+
+form label {
+    font-weight: bold;
+}
+
+form input{
+    margin-left: 10px;
+
+    border-top: 0px;
+    border-left:  0px;
+    border-right: 0px;
+    border-radius: 4px;
+}
+
+form input:invalid{
+    background-color: hsl(6, 78%, 84%);
+    border-color: red;
+}
+
+form input:valid{
+    background-color: hsl(168, 55%, 84%);
+    border-color: greenyellow;
+}
+
+form input:hover{
+    background-color: blanchedalmond;
+}
+
+form label:has(input[required])::after{
+    content: "*";
+    color: red;
+}
+
+form input[type=submit], form input[type=reset]{
+    background-color: rgb(52, 20, 233);
+    color: white;
+    border-radius: 10px;
+    border-style: hidden;
+    margin: 1em;
+}
+
+form input[type=submit]:hover, form input[type=reset]:hover{
+    background-color: aquamarine;
+    color: darkslategrey;
+}
