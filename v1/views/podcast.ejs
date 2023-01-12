@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Podcast Info</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/grid.css" />
+  </head>
+
+  <body>
+    <%- include("includes/header.ejs") %>
+
+    <div id="grid_main_aside">
+      <main class="podcast">
+        <section id="logo" title="Logo des Podcast">
+          <figure>
+            <img
+              src="<%= podcast.bildUrl %>"
+              width="150"
+              height="100"
+              alt="Logo des Podcasts: Lage der Nation"
+            />
+            <figcaption><small><%= podcast.titel %></small></figcaption>
+          </figure>
+        </section>
+
+        <section id="info" title="Informationen zum Podcast">
+          <h2>Informationen zum Podcast</h2>
+          <ul>
+            <li>
+              <h4>Titel</h4>
+              <p><%= podcast.titel %> </p>
+            </li>
+            <li>
+              <h4>Beschreibung</h4>
+              <p>
+                <%= podcast.beschreibung %>
+              </p>
+            </li>
+            <li>
+              <h4>Autor*in</h4>
+              <p><%= podcast.autor %></p>
+            </li>
+            <li>
+              <h4>Besitzer</h4>
+              <p>
+                <a href="mailto:<%= podcast.besitzerEmail %>"><%= podcast.besitzerName %></a>
+              </p>
+            </li>
+            <li>
+              <h4>Kategorien</h4>
+              <p><%= podcast.kategorien %></p>
+            </li>
+            <li>
+              <h4>letztes Update</h4>
+              <time datetime="<%= podcast.letztesUpdate %>">Letztes Update: <%= podcast.letztesUpdate %></time>
+            </li>
+          </ul>
+        </section>
+        <br/>
+
+        <section id="liste" title="Liste der Episoden">
+          <h2>Liste der Episoden</h2>
+          <table id="podcastTable">
+            <thead>
+              <tr>
+                <td>Datum</td>
+                <td>Titel</td>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let episode of podcast.episoden ) { %>
+                <tr>
+                  <td><time datetime="<%= episode.datum.substring(0,10) %>"><%= episode.datum.substring(0,10) %></time></td>
+                  <td><a href=""><%= episode.beschreibung %> </a></td>
+                </tr>
+              <% } %> 
+            </tbody>
+          </table>
+        </section>
+      </main>
+
+      <%- include("includes/aside.ejs") %>
+    </div>
+
+    <%- include("includes/footer.ejs") %>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Pott Catcher</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/forms.css" />
+    <link rel="stylesheet" type="text/css" href="css/flex.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+  </head>
+  <body>
+    <%- include("includes/header.ejs") %>
+
+    <div id="box_main_aside">
+      <main class="index">
+        <section id="listepodcast" title="Liste abbonierter Podcasts">
+          <h2>Abbonierte Podcast</h2>
+          <input id="ansichtWechsel" name="ansicht" type="button" value="Listenansicht" />
+          <div id="podcastboxen">
+            <!-- Inhalt Dynamisch per JS -->
+          </div>
+        </section>
+
+        <section id="podcastsuche" title="Podcast Suche">
+          <h2>Podcast finden</h2>
+          <form
+            action="https://labs.inf.fh-dortmund.de/podcastService/testPodcastSearch.php"
+            method="get"
+          >
+            <label>
+              Titel:
+              <input
+                name="pctitle"
+                type="text"
+                maxlength="100"
+                pattern="[A-Z].*"
+                required
+              />
+            </label>
+            <input name="find" type="submit" value="Finden" />
+          </form>
+        </section>
+      </main>
+
+      <%- include("includes/aside.ejs") %>
+    </div>
+
+    <%- include("includes/footer.ejs") %>
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
