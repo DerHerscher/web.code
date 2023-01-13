@@ -78,7 +78,8 @@ function abonnieren(url, callback) {
 function konvertieren(url, feed) {
   // [TODO]
   // Funktion implementieren
-  let p = new Podcast(feed.meta.title, 
+  let p = new Podcast(
+    feed.meta.title, 
     feed.meta.description,
     feed.meta.author,
     feed.meta.owner.name,

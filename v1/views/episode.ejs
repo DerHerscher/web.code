@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Episoden Info</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flex.css" />
+  </head>
+
+  <body>
+    <%- include("includes/header.ejs") %>
+    <div id="box_main_aside">
+      <main class="episode">
+        <section title="Informationen zur Episode">
+          <h2>Informationen zur Episode</h2>
+          <h4><%= episode.titel %></h4>
+
+          <h4>Beschreibung</h4>
+          <p>
+            <%= episode.beschreibung %>
+          </p>
+            <%= episode.datum %>
+        </section>
+
+        <section title="Audio Player zum abspielen der Episode">
+          <h2>Audio Player</h2>
+          <audio controls>
+            <source src="<%= episode.audioFile.url%>" type="audio/mp3" />
+            <source src="<%= episode.audioFile.url%>" type="audio/mpeg" />
+            Ihr Browser untersützt die Anwendung nicht
+          </audio>
+        </section>
+      </main>
+      <%- include("includes/aside.ejs") %>
+    </div>
+    <%- include("includes/footer.ejs") %>
+  </body>
+</html>

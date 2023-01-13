@@ -1,8 +1,6 @@
 const express = require("express");
 const app = express();
 const router = require("./routes/routes.js");
-
-
 const data = require("./models/persistence.js");
 
 
@@ -10,6 +8,8 @@ data.abonnieren("https://feeds.lagedernation.org/feeds/ldn-mp3.xml", () => {
     data.abonnieren("https://feeds.metaebene.me/lnp/m4a", () => {console.log("Podcast abonniert");} )
 });
 
+//Read html body contents
+app.use(express.urlencoded({extended:false}));
 //Activate Template engine
 app.set("view engine", "ejs");
 app.set("views","views")

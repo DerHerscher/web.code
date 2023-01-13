@@ -11,7 +11,6 @@
   </head>
   <body>
     <%- include("includes/header.ejs") %>
-
     <div id="box_main_aside">
       <main class="index">
         <section id="listepodcast" title="Liste abbonierter Podcasts">
@@ -43,11 +42,31 @@
         </section>
       </main>
 
+      <section id="podcastabo" title="Podcast abbonieren">
+        <h2>Abonnieren</h2>
+        <form
+          action="http://localhost:8020/abonnieren"
+          method="POST"
+        >
+          <label>
+            Titel:
+            <input
+              name="pcurl"
+              type="text"
+              maxlength="100"
+              required
+            />
+          </label>
+          <input name="abo" type="submit" value="Abonnieren" />
+        </form>
+      </section>
+    </main>
+
       <%- include("includes/aside.ejs") %>
     </div>
-
     <%- include("includes/footer.ejs") %>
-    <script src="js/script.js"></script>
-    <script src="js/index.js"></script>
+   
+    <script src="assets/js/script.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>

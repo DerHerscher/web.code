@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", function (req, res) {
   // [TODO]
   // Implementieren: Liste der abonnierten Podcasts anzeigen
-  res.render("index");
+  res.render("index", {podcast: data.podcasts} );
 });
 
 router.get("/podcast", function (req, res) {
@@ -24,12 +24,15 @@ router.get("/episode", function (req, res) {
   // Implementieren: Detailseite zur Episode anzeigen (Indizes
   // als Anfrage/Query-Parameter gegeben, Zugriff erfolgt mit:
   // req.query.pc und req.query.ep)
-  res.render("podcast", data[req.query.pc].episoden[req.query.ep]);
+  res.render("episode", {episode: data.podcasts[req.query.pc].episoden[req.query.ep]});
 });
 
 router.post("/abonnieren", function (req, res) {
   // [TODO]
   // Implementieren: Abonnieren eines Podcasts
+  data.abonnieren(req.body.pcurl);
+  console.log("abonnieren seite route.js");
+  res.render("index");
 });
 
 router.use("*", function(req, res) {
