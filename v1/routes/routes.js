@@ -38,8 +38,8 @@ router.post("/abonnieren", function (req, res) {
   // [TODO]
   // Implementieren: Abonnieren eines Podcasts
   data.abonnieren(req.body.pcurl);
-  console.log("abonnieren seite route.js");
-  res.render("index");
+  console.log(`Folgende Seite wird abonniert: ${req.body.pcurl}`);
+  res.redirect("/");
 });
 
 //Api Endpunkt für Daten

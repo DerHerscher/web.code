@@ -17,17 +17,7 @@
           <h2>Abbonierte Podcast</h2>
           <input id="ansichtWechsel" name="ansicht" type="button" value="Listenansicht" />
           <div id="podcastboxen">
-            <% let i=0; %> 
-            <% for (let podcast of podcasts ) { %>
-              <figure>
-                <a href="/podcast?pc=<%= i %>">
-                  <%= podcast.titel %>
-                  <br>
-                  <img src="<%= podcast.bildUrl %>" width="150" height="100" alt="Logo des Podcasts: <%= podcast.titel %>">
-                </a>
-              </figure>
-            <% i++; %> 
-            <% } %> 
+            <!-- Content Dynamisch per index.js -->
           </div>
         </section>
 

@@ -2,15 +2,14 @@
     <h5>Neueste Episoden</h5>
     <ul>
       <% let i=0; %>
-      <% for (let podcast of podcasts ) { %>
+      <% for (let i=0; i<podcasts.length; i++ ) { %>
         <li>
           <a href="/episode?pc=<%= i %>&ep=0">
-            <strong><%= podcast.titel %></strong>
-            <br><small><%= podcast.episoden[0].datum.substring(0,10) %></small>
-            <br><%= podcast.episoden[0].beschreibung %>
+            <strong><%= podcasts[i].titel %></strong>
+            <br><small><%= podcasts[i].episoden[0].datum.substring(0,10) %></small>
+            <br><%= podcasts[i].episoden[0].beschreibung %>
           </a>
         </li>
-        <% i++; %>
       <% } %> 
     </ul>
   </aside>
