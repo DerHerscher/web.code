@@ -4,9 +4,13 @@ const router = require("./routes/routes.js");
 const data = require("./models/persistence.js");
 
 
-data.abonnieren("https://feeds.lagedernation.org/feeds/ldn-mp3.xml", () => {
-    data.abonnieren("https://feeds.metaebene.me/lnp/m4a", () => {console.log("Podcast abonniert");} )
-});
+async function abo(){
+    await data.abonnieren("https://feeds.lagedernation.org/feeds/ldn-mp3.xml");
+    await data.abonnieren("https://feeds.metaebene.me/lnp/m4a");
+    await data.abonnieren("https://wowirsindistvorne.show/feed/mp3/");
+    console.log("Podcast abonniert");
+}
+abo();
 
 //Read html body contents
 app.use(express.urlencoded({extended:false}));

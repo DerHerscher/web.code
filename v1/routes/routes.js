@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", function (req, res) {
   // [TODO]
   // Implementieren: Liste der abonnierten Podcasts anzeigen
-  res.render("index", {podcast: data.podcasts} );
+  res.render("index", {podcasts: data.podcasts} );
 });
 
 router.get("/podcast", function (req, res) {
@@ -16,7 +16,7 @@ router.get("/podcast", function (req, res) {
   // Implementieren: Detailseite zum Podcast mit dem gegebenen
   // Index anzeigen (Index als Anfrage/Query-Parameter gegeben,
   // Zugriff erfolgt mit: req.query.pc)
-  res.render("podcast", { podcast: data.podcasts[req.query.pc] });
+  res.render("podcast", { podcast: data.podcasts[req.query.pc], pcnumber: req.query.pc});
 });
 
 router.get("/episode", function (req, res) {
@@ -24,7 +24,7 @@ router.get("/episode", function (req, res) {
   // Implementieren: Detailseite zur Episode anzeigen (Indizes
   // als Anfrage/Query-Parameter gegeben, Zugriff erfolgt mit:
   // req.query.pc und req.query.ep)
-  res.render("episode", {episode: data.podcasts[req.query.pc].episoden[req.query.ep]});
+  res.render("episode", {episode: data.podcasts[req.query.pc].episoden[req.query.ep], pcnumber: req.query.pc});
 });
 
 router.post("/abonnieren", function (req, res) {
@@ -33,6 +33,11 @@ router.post("/abonnieren", function (req, res) {
   data.abonnieren(req.body.pcurl);
   console.log("abonnieren seite route.js");
   res.render("index");
+});
+
+//Api Endpunkt für Daten
+router.get("/api", function (req, res) {
+  res.send(data.podcasts);
 });
 
 router.use("*", function(req, res) {

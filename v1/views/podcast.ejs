@@ -19,7 +19,7 @@
               src="<%= podcast.bildUrl %>"
               width="150"
               height="100"
-              alt="Logo des Podcasts: Lage der Nation"
+              alt="Logo des Podcasts: <%= podcast.titel %>"
             />
             <figcaption><small><%= podcast.titel %></small></figcaption>
           </figure>
@@ -70,11 +70,13 @@
               </tr>
             </thead>
             <tbody>
+              <% let i=0; %>
               <% for (let episode of podcast.episoden ) { %>
                 <tr>
                   <td><time datetime="<%= episode.datum.substring(0,10) %>"><%= episode.datum.substring(0,10) %></time></td>
-                  <td><a href=""><%= episode.beschreibung %> </a></td>
+                  <td><a href="/episode?pc=<%= pcnumber %>&ep=<%= i %>"><%= episode.beschreibung %> </a></td>
                 </tr>
+                <% i++; %>
               <% } %> 
             </tbody>
           </table>
