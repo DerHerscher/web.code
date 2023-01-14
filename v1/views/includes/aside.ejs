@@ -1,15 +1,16 @@
 <aside>
     <h5>Neueste Episoden</h5>
     <ul>
-      <li>
-        2022-10-19: Lage der Nation - 307: 49-Euro-Ticket, AKW-Streit,
-        Niedersachsen-Wahl, Strategie für die FDP, russischer Staatsterror,
-        Risiko eines Atomwaffeneinsatzes399
-      </li>
-      <li>
-        2022-10-15: LNP - 443: Auf YOLO konfigurieren – LNP Spezial zum
-        400.000.000€-Hack
-      </li>
-      <li>2022-06-26: Chaosradio - 277: Gesundheits-Apps</li>
+      <% let i=0; %>
+      <% for (let podcast of podcasts ) { %>
+        <li>
+          <a href="/episode?pc=<%= i %>&ep=0">
+            <strong><%= podcast.titel %></strong>
+            <br><small><%= podcast.episoden[0].datum.substring(0,10) %></small>
+            <br><%= podcast.episoden[0].beschreibung %>
+          </a>
+        </li>
+        <% i++; %>
+      <% } %> 
     </ul>
   </aside>
