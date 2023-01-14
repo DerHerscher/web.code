@@ -23,7 +23,7 @@ main.podcast {
 #logo  {grid-area: logo; }
 #liste { grid-area: liste; }
 
-img {
+body > img {
     width: 50%;
     height: auto;
 }
